@@ -1,0 +1,49 @@
+Les fonctions parseInt() et parseFloat() en JavaScript servent à convertir des chaînes de caractères (strings) en nombres (entiers ou décimaux respectivement).
+
+1. parseInt()
+But : Convertir une chaîne en un nombre entier.
+
+Syntaxe :
+
+parseInt(string, radix)
+string : La chaîne à convertir.
+radix (optionnel) : La base numérique à utiliser pour la conversion (par exemple, 10 pour le système décimal).
+Exemples :
+
+parseInt("42");       // Résultat : 42
+parseInt("42.9");     // Résultat : 42 (partie entière uniquement)
+parseInt("1010", 2);  // Résultat : 10 (interprète "1010" comme binaire)
+parseInt("abc");      // Résultat : NaN (pas un nombre valide)
+
+À noter :
+
+Si la chaîne commence par des caractères non numériques (après un éventuel espace blanc initial), parseInt retourne NaN.
+Il ignore les caractères après la première occurrence d'un caractère non numérique valide.
+
+2. parseFloat()
+But : Convertir une chaîne en un nombre décimal (float).
+
+Syntaxe :
+
+parseFloat(string)
+
+Exemples :
+
+parseFloat("42.9");   // Résultat : 42.9
+parseFloat("42");     // Résultat : 42
+parseFloat("42.9abc"); // Résultat : 42.9 (arrête à la première lettre non numérique)
+parseFloat("abc");    // Résultat : NaN (pas un nombre valide)
+
+À noter :
+
+Contrairement à parseInt, il prend en compte les parties décimales.
+Comme pour parseInt, il ignore les caractères non valides après le premier nombre valide.
+
+
+Différences principales entre parseInt et parseFloat :
+Fonction	Retourne	Prend en charge la base (radix) ?	Parties décimales
+parseInt	Nombre entier	Oui (ex. base 2, 10, 16, etc.)	Non (ignore)
+parseFloat	Nombre décimal	Non	Oui
+Quand utiliser :
+parseInt() : Quand tu veux obtenir un entier (par exemple, pour compter ou travailler avec des indices).
+parseFloat() : Quand tu as besoin de valeurs décimales (par exemple, pour des calculs financiers, des mesures, etc.).
